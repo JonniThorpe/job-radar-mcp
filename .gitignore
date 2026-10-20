@@ -26,8 +26,13 @@ my-vault/
 # Generated CVs, including the ones rendered from the example vault.
 output/
 
-# CVs and cover letters saved from the browser.
-*CV.html
-*CV_files/
-*CV.pdf
-*Cover Letter*
+# CVs and cover letters saved from the browser into the repo root. Anchored to
+# the root with '/': on case-insensitive file systems (Windows, macOS) an
+# unanchored '*CV.html' also matches templates/cv.html.
+/*CV.html
+/*CV_files/
+/*CV.pdf
+/*Cover Letter*
+
+# The CV template is source code and must always be tracked.
+!templates/cv.html

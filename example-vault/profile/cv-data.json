@@ -18,15 +18,15 @@
       },
       {
         "label": "linkedin.com/in/alex-morgan-example",
-        "href": "https://www.linkedin.com/in/x"
+        "href": "https://www.linkedin.com/in/alex-morgan-example"
       },
       {
-        "label": "github.com/alex-morgan",
-        "href": "https://github.com/alex-morgan"
+        "label": "github.com/alex-morgan-example",
+        "href": "https://github.com/alex-morgan-example"
       },
       {
-        "label": "gitlab.com/alexmorgan",
-        "href": "https://gitlab.com/alexmorgan"
+        "label": "gitlab.com/alex-morgan-example",
+        "href": "https://gitlab.com/alex-morgan-example"
       }
     ]
   },

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+<!-- Generado por job-radar-mcp (render_cv). No editar a mano: el contenido sale
+     de profile/cv-data.json y el diseno de templates/cv.html. {{STAMP}} -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOKENS: edita aquí colores y tipografías de todo el CV
+     ============================================================ */
+  :root {
+    --bg:          #FAFAF8;  /* fondo de página */
+    --surface:     #F1F0EC;  /* panel lateral, tarjetas */
+    --ink:         #1C1B1A;  /* texto principal */
+    --ink-soft:    #6B6862;  /* fechas, metadatos */
+    --accent:      #2B4C43;  /* acento primario: enlaces, títulos, estructura */
+    --accent-2:    #D2601A;  /* acento secundario: subtítulos, datos destacados (con moderación) */
+
+    --font-display: 'Archivo', 'Segoe UI', sans-serif;
+    --font-body:    'Inter', 'Segoe UI', sans-serif;
+
+    --sidebar-w: 64mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: var(--font-body);
+    background: #e6e4df;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  .page {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    background: var(--bg);
+    box-shadow: 0 4px 24px rgba(0,0,0,.18);
+  }
+
+  /* ============================================================
+     SIDEBAR
+     ============================================================ */
+  .sidebar {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--surface);
+    color: var(--ink);
+    padding: 8mm 6.5mm 5mm 7.5mm;
+    font-size: 7.8pt;
+    line-height: 1.34;
+  }
+
+  .name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 12pt;
+    white-space: nowrap;
+    line-height: 1.08;
+    color: var(--ink);
+    letter-spacing: .01em;
+    margin-bottom: 3.8mm;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 9.2pt;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 1.45;
+    margin-bottom: 3.8mm;
+  }
+
+  .summary { color: var(--ink); margin-bottom: 3.6mm; }
+
+  .contact { margin-bottom: 3.8mm; }
+  .contact a, .contact span {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+    margin-bottom: .8mm;
+  }
+  /* Solo los enlaces se parten a mitad de palabra. La direccion no: partirla
+     rompe el codigo postal y la ciudad para los ATS. */
+  .contact a { word-break: break-all; }
+  .contact a:hover { color: var(--accent); }
+
+  .side-section { margin-bottom: 3.7mm; }
+
+  .side-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 10.5pt;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 1.3mm;
+    margin-bottom: 2.3mm;
+  }
+
+  .stack-group { margin-bottom: 2mm; }
+  .stack-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 7.6pt;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 1.2mm;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 1.2mm; }
+  .tag {
+    background: var(--bg);
+    color: var(--ink);
+    border: 1px solid #DCDAD3;
+    border-radius: 2.5px;
+    padding: .8mm 1.7mm;
+    font-size: 7.2pt;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .edu-item { margin-bottom: 2mm; }
+  .edu-item b { color: var(--ink); font-weight: 600; display: block; }
+  .edu-meta { color: var(--ink-soft); font-size: 7.6pt; }
+  .edu-note {
+    display: inline-block;
+    margin-top: .8mm;
+    font-family: var(--font-display);
+    font-size: 6.6pt;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+  }
+
+  .lang-row { display: flex; justify-content: space-between; margin-bottom: .8mm; }
+  .lang-row b { color: var(--ink); font-weight: 600; }
+  .lang-row span { color: var(--ink-soft); }
+
+  /* ============================================================
+     MAIN
+     ============================================================ */
+  .main {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    left: var(--sidebar-w);
+    padding: 8mm 8mm 5mm 8mm;
+    color: var(--ink);
+    font-size: 8.2pt;
+    line-height: 1.34;
+  }
+
+  .main-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 12.5pt;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 3.8mm;
+  }
+  .main-title .bar {
+    display: inline-block;
+    width: 7mm; height: 3px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 2.5mm;
+    transform: translateY(-1px);
+  }
+  section + section .main-title { margin-top: 4mm; }
+
+  .entry { margin-bottom: 2.6mm; break-inside: avoid; }
+
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .role {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10pt;
+    color: var(--ink);
+  }
+  .org { color: var(--accent); font-weight: 600; }
+  .dates {
+    color: var(--ink-soft);
+    font-size: 7.8pt;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .entry ul { margin: .9mm 0 0 4mm; }
+  .entry li { margin-bottom: .6mm; padding-left: .5mm; }
+  .entry li::marker { color: var(--accent); }
+
+  .proj-stack {
+    color: var(--ink-soft);
+    font-size: 7.7pt;
+    font-style: italic;
+    margin-top: .3mm;
+  }
+  .proj-line { margin-top: .9mm; }
+  .proj-line b { color: var(--accent); font-weight: 700; }
+
+  /* Educacion: todo en una linea de texto para que los ATS no descuelguen la fecha. */
+  .edu-line { line-height: 1.3; }
+  .edu-line .edu-role { font-family: var(--font-display); font-weight: 700; font-size: 9.2pt; }
+  .edu-line .org { color: var(--accent); font-weight: 600; }
+  .edu-line .dates { color: var(--ink-soft); font-size: 7.8pt; font-weight: 500; }
+  .edu-line .edu-dot { color: var(--ink-soft); margin: 0 1.3mm; }
+
+  /* ============================================================
+     PRINT: imprimir a PDF (A4, sin margenes)
+     ============================================================ */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: none; padding: 0; }
+    .page { box-shadow: none; width: 210mm; }
+    a { color: inherit; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ======================= SIDEBAR ======================= -->
+  <aside class="sidebar">
+    <div class="name">{{NAME}}</div>
+    <div class="headline">{{HEADLINE}}</div>
+
+    <p class="summary">
+      {{SUMMARY}}
+    </p>
+
+    <div class="contact">
+{{CONTACT}}
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Languages</div>
+{{LANGUAGES}}
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Tech Stack</div>
+
+{{STACK}}
+    </div>
+  </aside>
+
+  <!-- ======================= MAIN ======================= -->
+  <main class="main">
+
+{{MAIN}}
+  </main>
+</div>
+</body>
+</html>

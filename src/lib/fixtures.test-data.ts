@@ -64,9 +64,9 @@ export const CV_BASE = {
       { label: "+00 000 000 000", href: "tel:+00000000000" },
       { label: "alex@example.com", href: "mailto:alex@example.com" },
       { label: "alexmorgan.example", href: "https://alexmorgan.example" },
-      { label: "linkedin.com/in/alex-morgan-example", href: "https://www.linkedin.com/in/x" },
-      { label: "github.com/alex-morgan", href: "https://github.com/alex-morgan" },
-      { label: "gitlab.com/alexmorgan", href: "https://gitlab.com/alexmorgan" }
+      { label: "linkedin.com/in/alex-morgan-example", href: "https://www.linkedin.com/in/alex-morgan-example" },
+      { label: "github.com/alex-morgan-example", href: "https://github.com/alex-morgan-example" },
+      { label: "gitlab.com/alex-morgan-example", href: "https://gitlab.com/alex-morgan-example" }
     ]
   },
   summary:
