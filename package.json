@@ -1,0 +1,42 @@
+{
+  "name": "job-radar-mcp",
+  "version": "0.1.0",
+  "description": "Local MCP server that screens job offers against your own skills profile and tracks the skills the market keeps asking for, all in plain Markdown files.",
+  "private": true,
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test \"build/**/*.test.js\"",
+    "watch": "tsc --watch",
+    "start": "node build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "job-search",
+    "obsidian",
+    "claude"
+  ],
+  "author": "Jonatan Thorpe",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonniThorpe/job-radar-mcp.git"
+  },
+  "homepage": "https://github.com/JonniThorpe/job-radar-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/JonniThorpe/job-radar-mcp/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}

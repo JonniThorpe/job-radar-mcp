@@ -1,0 +1,33 @@
+node_modules/
+build/
+*.log
+.env
+
+# Local Claude Code permissions belong to each machine, not to the project.
+.claude/settings.local.json
+
+# Local Obsidian state (open panes, appearance) belongs to each machine.
+.obsidian/
+
+# ------------------------------------------------------------------------
+# Your real data never goes into this repo.
+#
+# Keep your own vault OUTSIDE the repo (the default is ~/job-radar-vault).
+# If you still create it inside, name it vault/ or my-vault/ and it is ignored.
+# Any *.local.md file (personal notes, machine-specific setup) is ignored too.
+# example-vault/ is tracked on purpose: it only holds fictional data.
+# ------------------------------------------------------------------------
+vault/
+my-vault/
+*-vault/
+!example-vault/
+*.local.md
+
+# Generated CVs, including the ones rendered from the example vault.
+output/
+
+# CVs and cover letters saved from the browser.
+*CV.html
+*CV_files/
+*CV.pdf
+*Cover Letter*

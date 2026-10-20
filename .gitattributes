@@ -1,0 +1,3 @@
+# Normaliza finales de linea: LF en el repo, lo que toque en el disco.
+# Evita que cada commit desde Windows aparezca como "todo el archivo cambiado".
+* text=auto eol=lf
